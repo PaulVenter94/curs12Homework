@@ -17,6 +17,13 @@ public class Main {
         System.out.println(employeesList.getSum());
         System.out.println(employeesList.biggestSalary());
         System.out.println(employeesList.biggestSalaries());
+        CarShop carShop = new CarShop(getCarList());
+        System.out.println(carShop.noOfCars());
+        System.out.println(carShop.carKm());
+        Car car = getCarList().get(1);
+        System.out.println(car.getKm());
+        System.out.println(carShop.kmRange());
+        System.out.println(carShop.priceRange());
     }
 
     public static Set<Person> createList() {
@@ -50,6 +57,23 @@ public class Main {
         list.add(employees5);
         list.add(employees6);
         list.add(employees1);
+        return list;
+    }
+
+    public static List<Car> getCarList() {
+        Car car = new Car("Audi", 5, 8000, 15_200);
+        Car car1 = new Car("BMW", 6, 1156, 15_500);
+        Car car2 = new Car("Mercedes", 15, 301_000, 5_300);
+        Car car3 = new Car("VW", 5, 123_000, 10_000);
+        Car car4 = new Car("Audi", 11, 308_000, 5_600);
+        Car car5 = new Car("Audi", 3, 62_000, 20_000);
+        List<Car> list = new ArrayList<>();
+        list.add(car);
+        list.add(car1);
+        list.add(car2);
+        list.add(car3);
+        list.add(car4);
+        list.add(car5);
         return list;
     }
 }
