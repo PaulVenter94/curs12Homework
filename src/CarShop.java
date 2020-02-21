@@ -1,4 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class CarShop {
     private List<Car> carList;
@@ -7,13 +10,6 @@ public class CarShop {
         this.carList = carList;
     }
 
-    public Map<String, Integer> noOfCars() {
-        Map<String, Integer> newMap = new HashMap<>();
-        for (Map.Entry<String, List<Integer>> elem : mapNoOfCars().entrySet()) {
-            newMap.put(elem.getKey(), elem.getValue().size());
-        }
-        return newMap;
-    }
 
     public Map<String, List<Integer>> carKm() {
         Map<String, List<Integer>> map = new HashMap<>();
@@ -40,6 +36,7 @@ public class CarShop {
         }
         return map;
     }
+
     public Map<List<Integer>, List<Car>> priceRange() {
         Map<List<Integer>, List<Car>> map = new HashMap<>();
         for (Car car : carList) {
@@ -53,15 +50,16 @@ public class CarShop {
         return map;
     }
 
-    private Map<String, List<Integer>> mapNoOfCars() {
-        Map<String, List<Integer>> map = new HashMap<>();
+    public Map<String, Integer> mapNoOfCars() {
+        Map<String, Integer> map = new HashMap<>();
         for (Car car : carList) {
-            List<Integer> counter = map.get(car.getName());
+            Integer counter = map.get(car.getName());
             if (counter == null) {
-                counter = new ArrayList<>();
+                counter = 0;
                 map.put(car.getName(), counter);
             }
-            counter.add(1);
+            counter++;
+            map.put(car.getName(), counter);
         }
         return map;
     }

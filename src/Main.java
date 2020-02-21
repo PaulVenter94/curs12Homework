@@ -18,12 +18,12 @@ public class Main {
         System.out.println(employeesList.biggestSalary());
         System.out.println(employeesList.biggestSalaries());
         CarShop carShop = new CarShop(getCarList());
-        System.out.println(carShop.noOfCars());
         System.out.println(carShop.carKm());
         Car car = getCarList().get(1);
         System.out.println(car.getKm());
         System.out.println(carShop.kmRange());
         System.out.println(carShop.priceRange());
+        System.out.println(carShop.mapNoOfCars());
     }
 
     public static Set<Person> createList() {
