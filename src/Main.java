@@ -21,9 +21,9 @@ public class Main {
         System.out.println(carShop.carKm());
         Car car = getCarList().get(1);
         System.out.println(car.getKm());
+        System.out.println(carShop.mapNoOfCars());
         System.out.println(carShop.kmRange());
         System.out.println(carShop.priceRange());
-        System.out.println(carShop.mapNoOfCars());
     }
 
     public static Set<Person> createList() {
@@ -62,10 +62,10 @@ public class Main {
 
     public static List<Car> getCarList() {
         Car car = new Car("Audi", 5, 8000, 15_200);
-        Car car1 = new Car("BMW", 6, 1156, 15_500);
+        Car car1 = new Car("BMW", 6, 121_000, 15_500);
         Car car2 = new Car("Mercedes", 15, 301_000, 5_300);
         Car car3 = new Car("VW", 5, 123_000, 10_000);
-        Car car4 = new Car("Audi", 11, 308_000, 5_600);
+        Car car4 = new Car("Audi", 11, 301_500, 5_600);
         Car car5 = new Car("Audi", 3, 62_000, 20_000);
         List<Car> list = new ArrayList<>();
         list.add(car);
